@@ -29,24 +29,21 @@
     </site>
   </distributionManagement>
 
-  <build>
-    <plugins>
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>1.7</source>
-          <target>1.7</target>
-        </configuration>
-      </plugin>
-                    <plugin>
-                   <groupId>org.apache.maven.plugins</groupId>
-                   <artifactId>maven-war-plugin</artifactId>
-                   <version>2.3</version>
-                   <configuration>
-                       <failOnMissingWebXml>false</failOnMissingWebXml>
-                   </configuration>
-              </plugin>
-      <plugin>
+ <build>
+  <plugins>
+    <!-- Maven War Plugin -->
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-war-plugin</artifactId>
+      <version>2.1.1</version> <!-- Use a version compatible with Maven 3.0.5 -->
+      <configuration>
+        <failOnMissingWebXml>false</failOnMissingWebXml>
+      </configuration>
+    </plugin>
+    <!-- Other plugins... -->
+  </plugins>
+</build>   
+         <plugin>
         <artifactId>maven-release-plugin</artifactId>
         <configuration>
           <autoVersionSubmodules>true</autoVersionSubmodules>
